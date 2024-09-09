@@ -15,7 +15,7 @@ if ( ! defined( 'MFYAH_2024_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'MFYAH_2024_VERSION', '0.1.0' );
+	define( 'MFYAH_2024_VERSION', '0.1.1' );
 }
 
 if ( ! defined( 'MFYAH_2024_TYPOGRAPHY_CLASSES' ) ) {
@@ -147,6 +147,7 @@ add_action( 'widgets_init', 'mfyah_2024_widgets_init' );
 function mfyah_2024_scripts() {
 	wp_enqueue_style( 'mfyah-2024-style', get_stylesheet_uri(), array(), MFYAH_2024_VERSION );
 	wp_enqueue_script( 'mfyah-2024-script', get_template_directory_uri() . '/js/script.min.js', array(), MFYAH_2024_VERSION, true );
+	wp_enqueue_style( 'boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

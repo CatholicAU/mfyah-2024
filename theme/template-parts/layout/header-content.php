@@ -9,13 +9,13 @@
 
 ?>
 
-<header id="masthead">
+<header id="masthead" class="flex flex-row justify-between items-center w-full bg-neutral-100">
 
-	<div>
+	<div id="logo" class="py-6 px-6">
 		<?php
 		if ( is_front_page() ) :
 			?>
-			<h1><?php bloginfo( 'name' ); ?></h1>
+			<div class="font-bold"><?php bloginfo( 'name' ); ?></div>
 			<?php
 		else :
 			?>
@@ -30,15 +30,15 @@
 		<?php endif; ?>
 	</div>
 
-	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'mfyah-2024' ); ?>">
-		<button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mfyah-2024' ); ?></button>
+	<nav id="site-navigation" class="flex flex-row justify-between items-between px-6 py-6 gap-4" aria-label="<?php esc_attr_e( 'Main Navigation', 'mfyah-2024' ); ?>">
+		<button aria-controls="primary-menu" aria-expanded="false" class="flex p-2 justify-center items-center text-white bg-neutral-900 border-2 border-neutral-900 hover:text-neutral-900 hover:bg-transparent transition duration-300"><i class='bx bx-menu bx-sm'></i></button>
 
 		<?php
 		wp_nav_menu(
 			array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s hidden flex-row justasify-between gap-4" aria-label="submenu">%3$s</ul>',
 			)
 		);
 		?>
