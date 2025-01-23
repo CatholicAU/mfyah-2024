@@ -25,19 +25,19 @@ get_header();
 						array(
 							'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'mfyah-2024' ) . '</span> ' .
 								'<span class="sr-only">' . __( 'Next post:', 'mfyah-2024' ) . '</span> <br/>' .
-								'<span>%title</span>',
+								'<span></span>',
 							'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'mfyah-2024' ) . '</span> ' .
 								'<span class="sr-only">' . __( 'Previous post:', 'mfyah-2024' ) . '</span> <br/>' .
-								'<span>%title</span>',
+								'<span></span>',
 						)
 					);
 				}
 
 				// If comments are open, or we have at least one comment, load
 				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+				// if ( comments_open() || get_comments_number() ) {
+				// 	comments_template();
+				// }
 
 				// End the loop.
 			endwhile;

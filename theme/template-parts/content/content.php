@@ -39,8 +39,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php mfyah_2024_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!-- <footer class="entry-footer w-full max-w-screen-xl px-0 lg:px-6 mx-auto py-12 mt-12"> -->
+		<!-- <?php mfyah_2024_entry_footer(); ?> -->
+	<!-- </footer>.entry-footer -->
 
 </article><!-- #post-${ID} -->

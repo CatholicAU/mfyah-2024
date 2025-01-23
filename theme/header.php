@@ -11,7 +11,7 @@
  */
 
 ?><!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="font-serif scroll-smooth scroll-pt-16 lg:scroll-pt-16">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,9 @@
 
 <?php wp_body_open(); ?>
 
-<div id="page">
+<div id="page" class="bg-gradient-to-tl from-stone-50 via-stone-50 to-white">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'mfyah-2024' ); ?></a>
 
 	<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
-	<div id="content">
+	<div id="content" class="w-full">

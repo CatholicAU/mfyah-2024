@@ -74,7 +74,7 @@ if ( ! function_exists( 'mfyah_2024_entry_meta' ) ) :
 			mfyah_2024_posted_by();
 
 			// Posted on.
-			mfyah_2024_posted_on();
+			// mfyah_2024_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( __( ', ', 'mfyah-2024' ) );
@@ -196,7 +196,7 @@ if ( ! function_exists( 'mfyah_2024_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure>
+			<figure class="single-featured-image">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
@@ -204,7 +204,7 @@ if ( ! function_exists( 'mfyah_2024_post_thumbnail' ) ) :
 		else :
 			?>
 
-			<figure>
+			<figure class="listing-thumbnail">
 				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php the_post_thumbnail(); ?>
 				</a>

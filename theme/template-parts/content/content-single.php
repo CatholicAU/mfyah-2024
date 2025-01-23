@@ -29,7 +29,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Continue reading<span class="sr-only"> "%s"</span>', 'mfyah-2024' ),
+					__( ' Continue reading<span class="sr-only"> "%s"</span>', 'mfyah-2024' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -49,8 +49,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php mfyah_2024_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!-- <footer class="entry-footer"> -->
+		<!-- <?php mfyah_2024_entry_footer(); ?> -->
+	<!-- </footer>.entry-footer -->
 
 </article><!-- #post-${ID} -->

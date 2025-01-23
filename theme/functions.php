@@ -15,7 +15,7 @@ if ( ! defined( 'MFYAH_2024_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'MFYAH_2024_VERSION', '0.1.1' );
+	define( 'MFYAH_2024_VERSION', '1.0.2' );
 }
 
 if ( ! defined( 'MFYAH_2024_TYPOGRAPHY_CLASSES' ) ) {
@@ -81,7 +81,9 @@ if ( ! function_exists( 'mfyah_2024_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => __( 'Primary', 'mfyah-2024' ),
-				'menu-2' => __( 'Footer Menu', 'mfyah-2024' ),
+				'menu-2' => __( 'Footer Menu 1', 'mfyah-2024' ),
+				'menu-3' => __( 'Footer Menu 2', 'mfyah-2024' ),
+				'menu-4' => __( 'Footer Menu 3', 'mfyah-2024' ),
 			)
 		);
 
@@ -127,17 +129,96 @@ add_action( 'after_setup_theme', 'mfyah_2024_setup' );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function mfyah_2024_widgets_init() {
+	
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', 'mfyah-2024' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'mfyah-2024' ),
+			'name'          => __( 'Sidebar Home', 'mediablog2024' ),
+			'id'            => 'sidebar-2',
+			'description'   => __( 'Add widgets here to appear in home sidebar.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">', 
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Post', 'mfyah-2024' ),
+			'id'            => 'sidebar-3',
+			'description'   => __( 'Add widgets here to appear in single post sidebar.', 'mfyah-2024' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
+		),
 	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Page', 'mfyah-2024' ),
+			'id'            => 'sidebar-4',
+			'description'   => __( 'Add widgets here to appear in single page sidebar.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Search', 'mfyah-2024' ),
+			'id'            => 'sidebar-5',
+			'description'   => __( 'This sidebar displays a minimal search box only.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Footer 1', 'mfyah-2024' ),
+			'id'            => 'footer-1',
+			'description'   => __( 'This sidebar is displayed at the footer.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Footer 2', 'mfyah-2024' ),
+			'id'            => 'footer-2',
+			'description'   => __( 'This sidebar is displayed at the footer.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Footer 3', 'mfyah-2024' ),
+			'id'            => 'footer-3',
+			'description'   => __( 'This sidebar is displayed at the footer.', 'mfyah-2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar Footer 4', 'mediablog2024' ),
+			'id'            => 'footer-4',
+			'description'   => __( 'This sidebar is displayed at the footer.', 'mediablog2024' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+	);
+
 }
 add_action( 'widgets_init', 'mfyah_2024_widgets_init' );
 
@@ -147,11 +228,15 @@ add_action( 'widgets_init', 'mfyah_2024_widgets_init' );
 function mfyah_2024_scripts() {
 	wp_enqueue_style( 'mfyah-2024-style', get_stylesheet_uri(), array(), MFYAH_2024_VERSION );
 	wp_enqueue_script( 'mfyah-2024-script', get_template_directory_uri() . '/js/script.min.js', array(), MFYAH_2024_VERSION, true );
+	wp_enqueue_script( 'mfyah-2024-cookie-warning', get_template_directory_uri() . '/js/cookie-warning-banner.min.js', array(), MFYAH_2024_VERSION, true );
 	wp_enqueue_style( 'boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' );
-
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	} elseif ( is_page('Donate')) {
+		wp_enqueue_script( 'mfyah-2024-donation-widget', get_template_directory_uri() . '/js/donation-widget.min.js', array(), MFYAH_2024_VERSION, true );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'mfyah_2024_scripts' );
 
@@ -196,3 +281,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom filters for MFYAH2024 theme
+ */
+require get_template_directory() . '/inc/mfyah-2024-custom-functions.php';

@@ -1,0 +1,51 @@
+/* Donation Widget */
+
+#donation-widget input[type="radio"][name="donation_frequency"] + .radio-label {
+	@apply cursor-pointer w-full px-2 lg:px-4 py-4 md:py-4 text-neutral-600 hover:text-neutral-800 text-center text-sm md:text-base font-bold border-2 border-neutral-300 hover:border-neutral-800 bg-transparent hover:bg-teal-200/70 transition duration-300;
+}
+
+#donation-widget input[type="radio"][name="donation_frequency"]:checked + .radio-label {
+	@apply bg-teal-800 text-white border-teal-800;
+}
+
+#donation-widget input[type="radio"][name="donation_amount"] + .radio-label {
+	@apply cursor-pointer w-full px-2 py-4 border border-stone-300 hover:border-stone-800 rounded-lg text-stone-600 hover:text-stone-900 aria-disabled:text-neutral-400 aria-disabled:cursor-default text-center text-sm md:text-base bg-transparent aria-disabled:bg-transparent hover:bg-teal-200/70 font-semibold transition duration-300;
+}
+#donation-widget input[type="radio"][name="donation_amount"]:checked + .radio-label {
+	@apply bg-teal-500 text-white border-teal-500;
+}
+
+#donation-widget input[type="radio"][name="specify_amount"] + .radio-label {
+	@apply cursor-pointer w-full px-6 py-4 text-white text-center text-sm md:text-base bg-teal-600 hover:bg-teal-400 font-semibold transition duration-300;
+}
+
+#donation-widget input[type="radio"][name="specify_amount"]:checked + .radio-label {
+	@apply bg-teal-500 text-white border-teal-500;
+}
+
+/** Widget Components **/
+
+input.wp-block-search__input {
+	@apply text-black px-3;
+}
+
+/* Widget Labels */
+
+.widget.widget_block form {
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-heading {
+  @apply text-sm uppercase font-bold tracking-wider mb-6 opacity-80;
+}
+
+/* Footer Sidebar */
+
+footer ul.menu {
+	@apply flex flex-col gap-3;
+}
+
+footer ul.menu li {
+	@apply border-b border-teal-200/30 pb-2 tracking-wider hover:opacity-75;
+}

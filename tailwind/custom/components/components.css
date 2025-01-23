@@ -17,9 +17,103 @@
  * The supplied styles are meant to match the default `h1` classes from
  * Tailwind Typography.
  */
+
 .page-title,
 .entry-title {
-	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold text-neutral-900;
+	@apply max-w-content mx-auto mb-2 md:mb-6 text-3xl lg:text-4xl tracking-tight text-black;
+}
+
+#main {
+	@apply pb-16;
+}
+
+/* Listing - Content Excerpt */
+
+.listing-container {
+	@apply  max-w-content mx-auto grid grid-cols-12 gap-4 px-6 md:px-0 pt-8;
+}
+
+.listing-title {
+	@apply mb-4 lg:mb-4 text-2xl lg:text-3xl text-black;
+}
+
+.listing-thumbnail {
+	@apply col-span-12 md:col-span-4 aspect-banner md:aspect-square overflow-hidden mt-0 md:mt-2;
+}
+
+.listing-content {
+	@apply col-span-12 md:col-span-8;
+}
+
+/* Entry */
+
+.entry-header, .page-header {
+	@apply w-full  max-w-content mx-auto pt-32 lg:pt-40 px-6 md:px-0 pb-1 mb-4 border-b-2 border-dotted border-neutral-900/40;
+}
+
+.entry-meta, .entry-footer {
+	@apply max-w-content mx-auto flex flex-row justify-start gap-3 pb-6 text-sm font-sans;
+}
+
+.entry-content figure {
+	@apply max-w-content mx-auto;
+}
+
+.entry-content h2 {
+	@apply mt-6 py-0 text-xl font-semibold;
+}
+
+/* Article */
+
+article {
+	@apply pb-6;
+}
+
+article figure.wp-block-embed {
+	@apply mb-12;
+}
+
+article figure.excerpt-thumbnail {
+	@apply col-span-12 max-w-content mx-auto aspect-banner md:aspect-square overflow-hidden mt-2;
+}
+
+article figure.single-featured-image {
+	@apply max-w-content mx-auto aspect-video overflow-hidden mt-2 mb-8 md:mb-12;
+}
+
+img.attachment-post-thumbnail, img.size-post-thumbnail {
+	@apply object-cover object-center h-full;
+}
+
+/* Page Content */
+
+.page-content,
+.entry-content {
+@apply pb-6 md:pb-6;
+}
+
+.page-content > *,
+.entry-content > *:not(figure) {
+	/* Content width from the `theme.json` file */
+	@apply max-w-content mx-auto px-6 md:px-0 pb-4 md:pb-6;
+}
+
+/* Page Content - Search Form */
+
+.page-content .search-form {
+	@apply grid grid-cols-12 gap-4 my-6;
+}
+
+.page-content .search-form > * {
+	@apply col-span-12;
+}
+
+.page-content .search-form input.search-field {
+	@apply w-full p-3;
+}
+
+.page-content .search-form input.search-submit {
+	@apply bg-black hover:bg-teal-800 p-3 text-white transition duration-300;
 }
 
 /**
@@ -32,11 +126,7 @@
  *
  * https://make.wordpress.org/core/2021/06/29/on-layout-and-content-width-in-wordpress-5-8/
  */
-.page-content > *,
-.entry-content > * {
-	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
-}
+
 
 .entry-content > .alignwide {
 	/* Wide width from the `theme.json` file */
@@ -53,4 +143,14 @@
 
 .entry-content > .alignright {
 	@apply float-right ml-8;
+}
+
+/* Post Navigation - Nav Links */
+
+.nav-links {
+	@apply w-full max-w-content mx-auto flex flex-row justify-between items-center px-6 md:px-0 pb-16
+}
+
+.nav-next, .nav-previous {
+	@apply w-fit flex items-center text-xs text-white font-sans font-bold tracking-wider uppercase px-4 py-2 bg-black hover:bg-teal-800 transition duration-300;
 }
