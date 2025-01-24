@@ -12,8 +12,11 @@
  */
 function mfyah_2024_fetch_youtube_videos($item_key) {
  
-	$youtube_api_key = MFYAH2024_YOUTUBE_API_KEY;
-	$playlist_id = "PLJ9RDCFrPeRg3k5wQtY4n0P6Swrmanf7p";
+	// $youtube_api_key = MFYAH2024_YOUTUBE_API_KEY;
+	// $playlist_id = "PLJ9RDCFrPeRg3k5wQtY4n0P6Swrmanf7p";
+	
+	$youtube_api_key = get_option( 'mfyah2024_youtube_api_key' );
+	$playlist_id = get_option( 'mfyah2024_youtube_playlist' );
 	$max_items = 1;
 
 	$youtube_fetch_url = "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=" . $playlist_id . "&part=snippet&key=" . $youtube_api_key . "&maxResults=" . $max_items;
@@ -32,7 +35,10 @@ function mfyah_2024_fetch_youtube_videos($item_key) {
     CURLOPT_TIMEOUT => 30,
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => array(
-        "content-type: application/json"
+        "Content-Type: application/json",
+				"Cache-Control: no-cache, no-store, must-revalidate",
+				"Pragma: no-cache",
+				"Expires: 0"
     ) ,
 	));
 

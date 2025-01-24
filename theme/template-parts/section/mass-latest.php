@@ -29,7 +29,7 @@
         <a href="
         <?php
             // mfyah_2024_get_video_details_array filter is located in inc folder
-            // second arg is the array key of required video
+            // second arg is the array key of required video, key 0 is the first item in array
             $video_item = apply_filters('mfyah_2024_get_latest_video', 0);
             echo 'https://www.youtube.com/watch?v=' . $video_item['id'];
             ?>
